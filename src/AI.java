@@ -2,7 +2,7 @@ public abstract class AI extends Player {
    
     //TODO David: this subclass is a placeholder at the moment, as it only has one offshoot: see AdmiralDartboard
         Random rand = new Random();
-        List<Integer> aiGuess = new ArrayList<>();
+        ArrayList<Integer> aiGuess = new ArrayList<>();
         int len = aiGuess.size();
             public Integer generateRandomPosition(){
             for (int i = 0; i < len; i++) {
