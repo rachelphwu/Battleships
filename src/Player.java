@@ -4,7 +4,6 @@ public class Player {
     //TODO Rachel: define Player class. Needs a name field, and getters & setters
     //TODO Rachel: some kind of validation needed in the constructor: disallow numbers in name, for example? Any other criteria?
 
-    //Player holds list of shipsp
 
     private String name;
     private ArrayList<Ship> shipList = new ArrayList<>();
@@ -23,9 +22,21 @@ public class Player {
     /*
     Purpose: avoid repeated name, uppercase, number and symbol
    */
-    public void setName(String name) {
+    public void setName(String newName) {
+        name = newName;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public Board getTerritoryBoard() {
+        return territoryBoard;
+    }
+
+    public Board getAttackBoard() {
+        return attackBoard;
+    }
 
 
     /*
@@ -42,16 +53,6 @@ public class Player {
         return shipList;
     }
 
-    /*
-    Purpose: update list if ship is sunk
-    Input: coordinates
-    Output: x */
-
-    //find the ship that has been sunk
-    //change its location to
-    public void ArrayList<Ship> setShipList(int[][]){
-
-    }
 
     /*
     Purpose: Add ship to the shipList
@@ -102,8 +103,8 @@ public class Player {
     Input: coordinates
     Output: X */
     public void addShootRecord(int[][] strikePoint){
-        shootRecord.add(strikePoint);
-    }
+            shootRecord.add(strikePoint);
+        }
 
 
     /*Purpose: Check list of ships against the guesses, pass result to ship class and to board class, update if ship is sunk
@@ -115,4 +116,16 @@ public class Player {
         }
     }
 
+
+    /* ignore
+    Purpose: update list if ship is sunk
+    Input: coordinates
+    Output: x
+
+    //find the ship that has been sunk
+    //change its location to
+    public void ArrayList<Ship> setShipList(int[][]){
+
+    }
+    */
 }
