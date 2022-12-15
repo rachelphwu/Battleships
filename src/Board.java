@@ -14,26 +14,26 @@ public class Board {
      * It will be used for player 1 placement grid, player 1 guess grid, player 2 placement grid, and player 2 guess grid.
      * @return board
      */
-    public static StrikePoint[] createGrid() {
-        StrikePoint[] grid = new StrikePoint[gridSize];
+    public static StrikePoint[] createBoard() {
+        StrikePoint[] board = new StrikePoint[gridSize];
         int counter = 0;
         for (int x = 1; x <= (gridWidth); x++) {
             for (int y = 1; y <= (gridHeight); y++) {
                 StrikePoint sp = new StrikePoint(x,y);
                 sp.setHitShip(false);
                 sp.updateSymbol(" ~ ");
-                grid[counter] = sp;
+                board[counter] = sp;
                 counter++;
             }
         }
-        return grid;
+        return board;
     }
     /**
-     * print the grid for player to see, letters on y-axis, numbers on x-axis
+     * print the board for player to see, letters on y-axis, numbers on x-axis
      * NB: letters are cosmetic only
-     * @param grid take in grid to print
+     * @param board take in board to print
      */
-    public static void printGrid(StrikePoint[] grid){
+    public static void printBoard(StrikePoint[] board){
         //TODO: make grid scale with changing the width using numberdashes int
         int numberDashes = gridHeight*5 - 1;
         char colChar;
@@ -49,7 +49,7 @@ public class Board {
             System.out.print(colChar + "  | ");
             for (int x = 0; x < gridHeight; x++) {
                 //following line finds the symbol at the correct index and trims it to two characters
-                String symbol = grid[(y*gridHeight+x)].getSymbol().substring(0, Math.min(grid[(y*gridHeight+x)].getSymbol().length(), 2));
+                String symbol = board[(y*gridHeight+x)].getSymbol().substring(0, Math.min(board[(y*gridHeight+x)].getSymbol().length(), 2));
                 System.out.print(String.format("%-3s",  symbol + " | "));
             }
         }
@@ -100,18 +100,17 @@ public class Board {
      * This method takes in a strikepoint and updates it on a board
      * this can be used to update enemy board and guess board
      * @param sp take in a strikepoint where a guess was made
-     * @param grid
      * @return
      */
-    public void updateGridAfterGuess(StrikePoint sp, StrikePoint[] grid){
+    public void updateGridAfterGuess(StrikePoint sp){
         boolean success = sp.getHitShip();
         for (StrikePoint strikePoint : grid) {
             if (sp.equals(strikePoint)) {
                 if (success) {
-                    strikePoint.updateSymbol("X");
+                    strikePoint.updateSymbol(" X ");
                     strikePoint.setHitShip(true);
                 } else {
-                    strikePoint.updateSymbol("O");
+                    strikePoint.updateSymbol(" O ");
                 }
             }
         }
