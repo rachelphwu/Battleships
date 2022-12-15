@@ -3,7 +3,7 @@ public class StrikePoint {
     private int y;
     private boolean hitShip = false;
 
-    private String symbol = "O  ";
+    private String symbol = "0";
 
     /**Constructor for a StrikePoint. Takes two ints for x (horizontal) and y (vertical) coordinates. hitShip is
     * determined and set later by comparing a guess with a Ship's coordinates. */
@@ -20,9 +20,7 @@ public class StrikePoint {
     public void setX(int x) {this.x = x;}
     public void setY(int y) {this.y = y;}
 
-    public String getSymbol() {return symbol;}
-
-    public void updateSymbol(String o){
+    public void updateSymbol(){
         //Implementation dependent on Ship: is the name of the ship passed in? Do we hold boolean indicating if
         //StrikePoint is on a ship?
     }
