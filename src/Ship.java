@@ -8,13 +8,13 @@ public class Ship {
        it works for a ship with n StrikePoints (i.e. so you don't have to write an individual one for each subclass).  */
     
     private String name;
-    private List<StrikePoint> location;
+    private StrikePoint[] locations;
     private boolean isSunk;
     private int length;
 
     public Ship (String name, int row, int col, int length, Direction direction){
         this.name = name;
-        this.location = new ArrayList<>;
+        this.locations = new StrikePoint[];
         this.length = length;
         this.isSunk = false;
         int target;
@@ -50,7 +50,14 @@ public class Ship {
         }
     }
 
-    public boolean isSunk ( List<StrikePoint> enemyGuesses){
+    public StrikePoint[] getLocations() {
+        return locations;
+    }
+    public String getName() {
+        return name;
+    }
+
+    public boolean isSunk (List<StrikePoint> enemyGuesses){
         int count = 0;
         for(StrikePoint ship : location){
             if(enemy.getCol() == ship.getCol()) && enemy.getRow == ship.getRow()){
