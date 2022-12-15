@@ -17,12 +17,14 @@ public class StrikePoint {
     public int getY(){return y;}
     public boolean getHitShip(){return hitShip;}
     public void setHitShip(boolean hitShip) {this.hitShip = hitShip;}
+    public String getSymbol(){return symbol;}
     public void setX(int x) {this.x = x;}
     public void setY(int y) {this.y = y;}
 
-    public void updateSymbol(){
+    public void updateSymbol(String s){
         //Implementation dependent on Ship: is the name of the ship passed in? Do we hold boolean indicating if
         //StrikePoint is on a ship?
+        this.symbol=s;
     }
 
     /**Override of equals, checking equality of X and Y. Ignores hitShip, because likely, that's what equals method is
