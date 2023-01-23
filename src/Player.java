@@ -1,13 +1,11 @@
 import java.util.ArrayList;
 
 public class Player {
-    //TODO Rachel: define Player class. Needs a name field, and getters & setters
-    //TODO Rachel: some kind of validation needed in the constructor: disallow numbers in name, for example? Any other criteria?
-
 
     private String name;
     private ArrayList<Ship> shipList = new ArrayList<>();
-    private ArrayList<int[][]> shootRecord = new ArrayList<>();
+    private ArrayList<StrikePoint> shootRecord = new ArrayList<>();
+    private int hit;
     private Board territoryBoard;
     private Board attackBoard;
 
@@ -61,8 +59,8 @@ public class Player {
 
     //check if the shipList contains the ship
     //if not, add it to the shipList
-    public boolean placeShip(Ship s) {
-        if(!shipList.contains(s)){
+    public void placeShip(Ship s) {
+        if (!shipList.contains(s)) {
             shipList.add(s);
         }
     }
@@ -74,10 +72,13 @@ public class Player {
 
     //input strikePoint
     //return true if input does not match strikePoints of other ships
-    public boolean noOverLap(int[][] strikePoint) {
+    public boolean noOverLap(StrikePoint p) {
         for (Ship s : shipList) {
-            return s.getStrikePoint() != strikePoint;
+            if (s.getLocations().equals(p)) {
+                return false;
+            }
         }
+        return true;
     }
 
 
@@ -88,44 +89,33 @@ public class Player {
 
     //input coordinates
     //return true if
-    public boolean noRepeatedShoot(int[][] newStrikePoint) {
-         (int[][] strikePoint : shootRecord) {
-            if(!shootRecord.contains(newStrikePoint)){
-                return true;
-            }
-            else{
+    public boolean noRepeatedShoot(StrikePoint newPoint) {
+        (StrikePoint p:
+        shootRecord){
+            if (!newPoint.equals(p)) {
+                shootRecord.add(newPoint);
+            } else {
                 System.out.println(strikePoint + " has been shot before. Try again.");
             }
         }
     }
 
-    /*Purpose: add coordinates to shoot record
-    Input: coordinates
-    Output: X */
-    public void addShootRecord(int[][] strikePoint){
-            shootRecord.add(strikePoint);
-        }
 
-
-    /*Purpose: Check list of ships against the guesses, pass result to ship class and to board class, update if ship is sunk
+    /*Purpose:
+    - Check list of ships against the guesses, pass result to ship class and to board class, update if ship is sunk
+    - With a boolean method to check if game has been won
    Input: coordinates
    Output: boolean */
-    public boolean checkHit(int[][] strikePoint) {
+    public String checkHit(StrikePoint p) {
         for (Ship s : shipList) {
-            return s.getStrikePoint() = strikePoint;
+            if (s.().equals(p)) {
+                higetLocationst++;
+                if (hit == 5) {
+                    return "Victory! You hit the last ship and won the game.";
+                }
+                return "Hit";
+            }
         }
+        return "Miss";
     }
-
-
-    /* ignore
-    Purpose: update list if ship is sunk
-    Input: coordinates
-    Output: x
-
-    //find the ship that has been sunk
-    //change its location to
-    public void ArrayList<Ship> setShipList(int[][]){
-
-    }
-    */
 }

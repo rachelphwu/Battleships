@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="6dd25f0a-dfaf-4e43-ba73-59fd46a46a49" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/StrikePoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StrikePoint.java" afterDir="false" />
+    <list default="true" id="6dd25f0a-dfaf-4e43-ba73-59fd46a46a49" name="Changes" comment="What have been updated: &#10;- constructor&#10;- setter for name&#10;- getter for name, territoryBoard, attackBoard&#10;- getter for ship in shipList&#10;- getter for shipList&#10;&#10;_______&#10;methods&#10;&#10;- placeShip()&#10;- noOverLap()&#10;- noRepeatedShoot()&#10;- addShootRecord()&#10;- checkHit()">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +37,9 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
@@ -48,6 +55,11 @@
       <updated>1670277913766</updated>
       <workItem from="1670277915074" duration="2363000" />
       <workItem from="1670328073494" duration="98000" />
+      <workItem from="1673348642563" duration="1804000" />
+      <workItem from="1673426218529" duration="598000" />
+      <workItem from="1673434521314" duration="1197000" />
+      <workItem from="1673513109763" duration="597000" />
+      <workItem from="1674467255594" duration="2782000" />
     </task>
     <servers />
   </component>
@@ -59,7 +71,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
