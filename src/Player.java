@@ -109,7 +109,7 @@ public class Player {
     public String checkHit(StrikePoint p) {
         for (Ship s : shipList) {
             if (s.().equals(p)) {
-                higetLocationst++;
+                hit++;
                 if (hit == 5) {
                     return "Victory! You hit the last ship and won the game.";
                 }
