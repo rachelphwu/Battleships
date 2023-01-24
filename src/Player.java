@@ -113,12 +113,17 @@ public class Player {
     - With a boolean method to check if game has been won
    Input: coordinates
    Output: boolean */
+
+    /*TODO this method is a bit confused: it declares a winner if a ship receives 5 hits! A player in battleships wins
+    *  when all of his opponent's ships have been sunk. Also, is shipList the player's list or the enemy's? If it's
+    * the players', the player probably shouldn't win if their own ship has been sunk. Returning a String is also not a
+    * good idea: instead we need to modify the StrikePoint present in the ship in question so the boolean for a hit
+    * reads true.*/
     public String checkHit(StrikePoint p) {
         for (Ship s : shipList) {
             if (s.().equals(p)) {
                 hit++;
-                /*TODO 5 is a magic number - please replace with a variable. It would be wise to code as if the number
-                   of ships could vary; perhaps the number of ships in the shipList could be useful here. */
+
                 if (hit == 5) {
                     return "Victory! You hit the last ship and won the game.";
                 }
