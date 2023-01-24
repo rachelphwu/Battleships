@@ -90,12 +90,19 @@ public class Player {
     //input coordinates
     //return true if
     public boolean noRepeatedShoot(StrikePoint newPoint) {
-        (StrikePoint p:
+        /*TODO - I'm guessing this was meant to be a for-each loop, so I've put that in. I also changed the 'else' here
+           to print out newPoint. At present, this for-each loop adds a new point to the shootRecord equal to newPoint
+           each time it doesn't find a match. The function also needs return statements for each case. I would use this
+           to exit the for-each loop and the method as a whole if/when a match is found (false) and return true when a match
+           is not found.
+        */
+        for (StrikePoint p:
         shootRecord){
+            //this is
             if (!newPoint.equals(p)) {
                 shootRecord.add(newPoint);
             } else {
-                System.out.println(strikePoint + " has been shot before. Try again.");
+                System.out.println(newPoint + " has been shot before. Try again.");
             }
         }
     }
@@ -110,6 +117,8 @@ public class Player {
         for (Ship s : shipList) {
             if (s.().equals(p)) {
                 hit++;
+                /*TODO 5 is a magic number - please replace with a variable. It would be wise to code as if the number
+                   of ships could vary; perhaps the number of ships in the shipList could be useful here. */
                 if (hit == 5) {
                     return "Victory! You hit the last ship and won the game.";
                 }
