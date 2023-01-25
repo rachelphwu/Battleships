@@ -163,7 +163,6 @@ public class Player {
 }
 
 
-
     /*
     New features to be added later on:
      Avoid repeated name, uppercase, number and symbol
