@@ -128,10 +128,10 @@ public class Player {
      * */
 
     /* Reply from Rachel:
-       The ship list belongs to the player.
-
        This method is for the player to check enemy's attack against his/her ship list,
        Game can then pass result to ship class and to board class to update if ship is sunk.
+
+       The ship list belongs to the player.
 
        The hit counter (now changed to lives counter) belongs to the player, not the ship.
        If a player's lives reduces to 0, it means that all his/her ships are sunk. Game over.
